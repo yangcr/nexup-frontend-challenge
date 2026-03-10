@@ -10,26 +10,17 @@ export const ProductItem: React.FC<ProductItemProps> = ({ product }) => {
   const isActive = product.status === ProductStatus.Active;
 
   return (
-    <div
-      style={{
-        display: 'flex',
-        alignItems: 'center',
-        gap: '5px',
-        marginBottom: '10px',
-      }}
-    >
-      <div
-        title={product.status}
-        style={{
-          backgroundColor: isActive ? 'green' : 'red',
-          borderRadius: '100%',
-          width: '10px',
-          height: '10px',
-        }}
-      />
-      <span>{product.name}</span>
-      <span>{product.category}</span>
-      <span>${product.price.toFixed(2)}</span>
-    </div>
+    <article className="product-item">
+      <header className="product-item__header">
+        <h3 className="product-name">{product.name}</h3>
+        <span
+          className={`product-status ${isActive ? 'product-status--active' : 'product-status--inactive'}`}
+        >
+          {product.status}
+        </span>
+      </header>
+      <p className="product-category">{product.category}</p>
+      <p className="product-price">${product.price.toFixed(2)}</p>
+    </article>
   );
 };

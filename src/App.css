@@ -1,0 +1,63 @@
+/* G R I L L A    W R A P P E R    D E    P R O D U C T O S */
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+/* C A R D   P R O D U C T O */
+.product-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  background-color: #fff;
+
+  .product-item__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    border-bottom: 1px solid #e5e5e5;
+    padding: 0 0 1rem;
+  }
+
+  .product-name {
+    font-size: 1rem;
+    font-weight: 700;
+  }
+
+  .product-status {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    padding: 0.2rem 0.5rem;
+    border-radius: 999px;
+    border: 1px solid;
+    white-space: nowrap;
+
+    &.product-status--active {
+      color: #16a34a;
+      border-color: #16a34a;
+      background-color: #dcfce7;
+    }
+
+    &.product-status--inactive {
+      color: #dc2626;
+      border-color: #dc2626;
+      background-color: #fee2e2;
+    }
+  }
+
+  .product-category {
+    color: #666;
+    font-size: smaller;
+  }
+
+  .product-price {
+    font-weight: 500;
+    margin-top: auto;
+  }
+}
