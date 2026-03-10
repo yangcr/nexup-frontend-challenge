@@ -1,3 +1,35 @@
+/* A P P   W R A P P E R */
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  .app__header {
+    padding: 1.5rem 2rem;
+    background-color: #fff;
+    border-bottom: 1px solid #e5e5e5;
+
+    h1 {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+  }
+
+  .app__main {
+    flex: 1;
+    padding: 2rem;
+  }
+
+  .app__footer {
+    padding: 1rem 2rem;
+    background-color: #fff;
+    border-top: 1px solid #e5e5e5;
+    text-align: center;
+    font-size: 0.875rem;
+    color: #666;
+  }
+}
+
 /* G R I L L A    W R A P P E R    D E    P R O D U C T O S */
 .product-list {
   display: grid;
