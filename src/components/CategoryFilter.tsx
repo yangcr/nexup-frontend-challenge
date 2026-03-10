@@ -1,9 +1,10 @@
 import React from 'react';
 import { ProductCategory } from '../models/ProductCategory';
+import { CategorySelection } from '../models/CategorySelection';
 
 interface CategoryFilterProps {
-  value: ProductCategory | 'All';
-  onChange: (value: ProductCategory | 'All') => void;
+  value: CategorySelection;
+  onChange: (value: CategorySelection) => void;
 }
 
 export const CategoryFilter: React.FC<CategoryFilterProps> = ({

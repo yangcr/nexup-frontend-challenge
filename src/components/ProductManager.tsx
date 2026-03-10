@@ -1,15 +1,14 @@
 import React from 'react';
 import { ProductList } from './ProductList';
 import { CategoryFilter } from './CategoryFilter';
-import { ProductCategory } from '../models/ProductCategory';
 import { Product } from '../models/Product';
+import { CategorySelection } from '../models/CategorySelection';
 import { getProductList } from '../api/products';
 
 export const ProductManager: React.FC = () => {
   const [products, setProducts] = React.useState<Product[]>([]);
-  const [categoryFilter, setCategoryFilter] = React.useState<
-    'All' | ProductCategory
-  >('All');
+  const [categoryFilter, setCategoryFilter] =
+    React.useState<CategorySelection>('All');
   const [textFilter, setTextFilter] = React.useState('');
 
   React.useEffect(() => {
