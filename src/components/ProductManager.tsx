@@ -10,19 +10,32 @@ export const ProductManager: React.FC = () => {
   const [categoryFilter, setCategoryFilter] = React.useState<
     'All' | ProductCategory
   >('All');
+  const [textFilter, setTextFilter] = React.useState('');
 
   React.useEffect(() => {
     setProducts(getProductList());
   }, []);
 
-  const filteredProducts =
-    categoryFilter === 'All'
-      ? products
-      : products.filter((p) => p.category === categoryFilter);
+  const filteredProducts = products.filter((product) => {
+    const matchesCategory =
+      categoryFilter === 'All' || product.category === categoryFilter;
+
+    const matchesText = product.name
+      .toLowerCase()
+      .includes(textFilter.trim().toLowerCase());
+
+    return matchesCategory && matchesText;
+  });
 
   return (
     <div>
       <CategoryFilter value={categoryFilter} onChange={setCategoryFilter} />
+      <input
+        type="text"
+        placeholder='Enter the product name. E.g: "Lamb Chops"'
+        value={textFilter}
+        onChange={(e) => setTextFilter(e.target.value)}
+      />
       <ProductList productList={filteredProducts} />
     </div>
   );
