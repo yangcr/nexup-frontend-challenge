@@ -9,6 +9,7 @@ const PRODUCTS: Product[] = [
     category: ProductCategory.Fruit,
     status: ProductStatus.Active,
     price: 1.5,
+    stock: 120,
   },
   {
     id: 2,
@@ -16,6 +17,7 @@ const PRODUCTS: Product[] = [
     category: ProductCategory.Fruit,
     status: ProductStatus.Active,
     price: 0.75,
+    stock: 0,
   },
   {
     id: 3,
@@ -23,6 +25,7 @@ const PRODUCTS: Product[] = [
     category: ProductCategory.Fruit,
     status: ProductStatus.Inactive,
     price: 2.3,
+    stock: 30,
   },
   {
     id: 4,
@@ -30,6 +33,7 @@ const PRODUCTS: Product[] = [
     category: ProductCategory.Fruit,
     status: ProductStatus.Active,
     price: 3.99,
+    stock: 0,
   },
   {
     id: 5,
@@ -37,6 +41,7 @@ const PRODUCTS: Product[] = [
     category: ProductCategory.Vegetables,
     status: ProductStatus.Active,
     price: 1.2,
+    stock: 55,
   },
   {
     id: 6,
@@ -44,6 +49,7 @@ const PRODUCTS: Product[] = [
     category: ProductCategory.Vegetables,
     status: ProductStatus.Active,
     price: 0.9,
+    stock: 200,
   },
   {
     id: 7,
@@ -51,6 +57,7 @@ const PRODUCTS: Product[] = [
     category: ProductCategory.Vegetables,
     status: ProductStatus.Inactive,
     price: 1.75,
+    stock: 0,
   },
   {
     id: 8,
@@ -58,6 +65,7 @@ const PRODUCTS: Product[] = [
     category: ProductCategory.Vegetables,
     status: ProductStatus.Active,
     price: 1.1,
+    stock: 80,
   },
   {
     id: 9,
@@ -65,6 +73,7 @@ const PRODUCTS: Product[] = [
     category: ProductCategory.Meat,
     status: ProductStatus.Active,
     price: 12.5,
+    stock: 15,
   },
   {
     id: 10,
@@ -72,6 +81,7 @@ const PRODUCTS: Product[] = [
     category: ProductCategory.Meat,
     status: ProductStatus.Active,
     price: 7.8,
+    stock: 0,
   },
   {
     id: 11,
@@ -79,6 +89,7 @@ const PRODUCTS: Product[] = [
     category: ProductCategory.Meat,
     status: ProductStatus.Inactive,
     price: 9.99,
+    stock: 8,
   },
   {
     id: 12,
@@ -86,6 +97,7 @@ const PRODUCTS: Product[] = [
     category: ProductCategory.Meat,
     status: ProductStatus.Active,
     price: 15.0,
+    stock: 4,
   },
 ];
 
