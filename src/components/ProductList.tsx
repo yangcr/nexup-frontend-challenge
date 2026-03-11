@@ -7,6 +7,12 @@ interface ProductListProps {
 }
 
 export const ProductList: React.FC<ProductListProps> = ({ productList }) => {
+  if (productList.length === 0) {
+    return (
+      <p className="empty-state">No products match the current filters.</p>
+    );
+  }
+
   return (
     <div className="product-list">
       {productList.map((product) => (

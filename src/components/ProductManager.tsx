@@ -58,7 +58,7 @@ export const ProductManager: React.FC = () => {
         </label>
       </div>
       {loading ? (
-        <p>Loading...</p>
+        <div className="loading-spinner" />
       ) : (
         <ProductList productList={filteredProducts} />
       )}

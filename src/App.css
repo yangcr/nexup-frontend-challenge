@@ -1,3 +1,26 @@
+/* L O A D I N G   &   E M P T Y   S T A T E S */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-spinner {
+  width: 36px;
+  height: 36px;
+  border: 3px solid #e5e5e5;
+  border-top-color: #6b7280;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  margin: 3rem auto;
+}
+
+.empty-state {
+  text-align: center;
+  color: #999;
+  padding: 3rem 0;
+}
+
 /* A P P   W R A P P E R */
 .app {
   display: flex;
