@@ -4,15 +4,23 @@ import { CategoryFilter } from './CategoryFilter';
 import { Product } from '../models/Product';
 import { CategorySelection } from '../models/CategorySelection';
 import { getProductList } from '../api/products';
+import { useDebounce } from '../hooks/useDebounce';
 
 export const ProductManager: React.FC = () => {
   const [products, setProducts] = React.useState<Product[]>([]);
+  const [loading, setLoading] = React.useState(true);
   const [categoryFilter, setCategoryFilter] =
     React.useState<CategorySelection>('All');
   const [textFilter, setTextFilter] = React.useState('');
 
+  const debouncedTextFilter = useDebounce(textFilter, 300);
+
   React.useEffect(() => {
-    setProducts(getProductList());
+    setLoading(true);
+    getProductList().then((data) => {
+      setProducts(data);
+      setLoading(false);
+    });
   }, []);
 
   const filteredProducts = products.filter((product) => {
@@ -21,7 +29,7 @@ export const ProductManager: React.FC = () => {
 
     const matchesText = product.name
       .toLowerCase()
-      .includes(textFilter.trim().toLowerCase());
+      .includes(debouncedTextFilter.trim().toLowerCase());
 
     return matchesCategory && matchesText;
   });
@@ -38,7 +46,11 @@ export const ProductManager: React.FC = () => {
           onChange={(e) => setTextFilter(e.target.value)}
         />
       </div>
-      <ProductList productList={filteredProducts} />
+      {loading ? (
+        <p>Loading...</p>
+      ) : (
+        <ProductList productList={filteredProducts} />
+      )}
     </div>
   );
 };

@@ -89,4 +89,9 @@ const PRODUCTS: Product[] = [
   },
 ];
 
-export const getProductList = (): Product[] => PRODUCTS;
+const randomDelay = () => Math.floor(Math.random() * 800) + 200;
+
+export const getProductList = (): Promise<Product[]> =>
+  new Promise((resolve) => {
+    setTimeout(() => resolve(PRODUCTS), randomDelay());
+  });
