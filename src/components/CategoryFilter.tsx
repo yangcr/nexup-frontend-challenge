@@ -16,7 +16,7 @@ export const CategoryFilter: React.FC<CategoryFilterProps> = ({
   };
 
   return (
-    <select value={value} onChange={handleChange}>
+    <select className="filter-select" value={value} onChange={handleChange}>
       <option value="All">Todos</option>
       {Object.values(ProductCategory).map((category) => (
         <option key={category} value={category}>

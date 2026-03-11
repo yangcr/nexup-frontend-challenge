@@ -30,6 +30,50 @@
   }
 }
 
+/* F I L T R O S */
+.product-manager {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  .filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+}
+
+.filter-input,
+.filter-select {
+  padding: 0.5rem 0.75rem;
+  font-size: 0.9rem;
+  font-family: inherit;
+  color: inherit;
+  background-color: #fff;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  outline: none;
+  transition: border-color 0.15s ease;
+
+  &:focus {
+    border-color: #6b7280;
+  }
+}
+
+.filter-select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%236b7280' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  padding-right: 2rem;
+}
+
+.filter-input {
+  flex: 1;
+  min-width: 200px;
+}
+
 /* G R I L L A    W R A P P E R    D E    P R O D U C T O S */
 .product-list {
   display: grid;

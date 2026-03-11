@@ -27,14 +27,17 @@ export const ProductManager: React.FC = () => {
   });
 
   return (
-    <div>
-      <CategoryFilter value={categoryFilter} onChange={setCategoryFilter} />
-      <input
-        type="text"
-        placeholder='Enter the product name. E.g: "Lamb Chops"'
-        value={textFilter}
-        onChange={(e) => setTextFilter(e.target.value)}
-      />
+    <div className="product-manager">
+      <div className="filters">
+        <CategoryFilter value={categoryFilter} onChange={setCategoryFilter} />
+        <input
+          className="filter-input"
+          type="text"
+          placeholder='Enter the product name. E.g: "Lamb Chops"'
+          value={textFilter}
+          onChange={(e) => setTextFilter(e.target.value)}
+        />
+      </div>
       <ProductList productList={filteredProducts} />
     </div>
   );
