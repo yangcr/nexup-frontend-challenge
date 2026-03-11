@@ -21,6 +21,11 @@ export const ProductItem: React.FC<ProductItemProps> = ({ product }) => {
       </header>
       <p className="product-category">{product.category}</p>
       <p className="product-price">${product.price.toFixed(2)}</p>
+      <p
+        className={`product-stock ${product.stock === 0 ? 'product-stock--empty' : ''}`}
+      >
+        Stock: {product.stock}
+      </p>
     </article>
   );
 };

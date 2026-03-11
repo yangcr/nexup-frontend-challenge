@@ -74,6 +74,16 @@
   min-width: 200px;
 }
 
+/* C H E C K B O X   F I L T R O */
+.filter-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
 /* G R I L L A    W R A P P E R    D E    P R O D U C T O S */
 .product-list {
   display: grid;
@@ -135,5 +145,14 @@
   .product-price {
     font-weight: 500;
     margin-top: auto;
+  }
+
+  .product-stock {
+    font-size: 0.8rem;
+    color: #16a34a;
+
+    &.product-stock--empty {
+      color: #dc2626;
+    }
   }
 }

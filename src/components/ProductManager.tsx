@@ -12,6 +12,7 @@ export const ProductManager: React.FC = () => {
   const [categoryFilter, setCategoryFilter] =
     React.useState<CategorySelection>('All');
   const [textFilter, setTextFilter] = React.useState('');
+  const [inStockOnly, setInStockOnly] = React.useState(false);
 
   const debouncedTextFilter = useDebounce(textFilter, 300);
 
@@ -31,7 +32,9 @@ export const ProductManager: React.FC = () => {
       .toLowerCase()
       .includes(debouncedTextFilter.trim().toLowerCase());
 
-    return matchesCategory && matchesText;
+    const matchesStock = !inStockOnly || product.stock > 0;
+
+    return matchesCategory && matchesText && matchesStock;
   });
 
   return (
@@ -45,6 +48,14 @@ export const ProductManager: React.FC = () => {
           value={textFilter}
           onChange={(e) => setTextFilter(e.target.value)}
         />
+        <label className="filter-checkbox">
+          <input
+            type="checkbox"
+            checked={inStockOnly}
+            onChange={(e) => setInStockOnly(e.target.checked)}
+          />
+          In stock only
+        </label>
       </div>
       {loading ? (
         <p>Loading...</p>
